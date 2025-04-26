@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Home</title>
+    <style>
+        body {
+            background-color: rgb(6, 122, 128);
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="welcomeMessage">Welcome!</h1>
+    <h2>
+        <strong>Do not click on any of the PDF Links 🙏</strong>
+    </h2>
+    <p>They are currently in construction.</p>
+    <h3>Subjects:</h3>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        <button onclick="location.href='#math'">Mathematics</button>
+        <button onclick="location.href='#chemistry'">Chemistry</button>
+        <button onclick="location.href='#anatomy'">Anatomy & Physiology</button>
+        <button onclick="location.href='#cprogramming'">C Programming</button>
+        <button onclick="location.href='#eipr'">E&IPR</button>
+        <button onclick="location.href='#foundation of computing'">Foundation of Computing</button>
+    </div>
+
+    <br><br>
+
+    <!-- Subject Sections -->
+    <section id="math">
+        <h2>Mathematics</h2>
+        <p>📚 Some notes and concepts here...</p>
+        <a href="pdfs/math_notes.pdf" download>Download Math Notes (PDF)</a>
+    </section>
+
+    <section id="chemistry">
+        <h2>Chemistry</h2>
+        <p>🔬 Chemistry materials and notes...</p>
+        <a href="pdfs/chemistry_notes.pdf" download>Download Chemistry Notes (PDF)</a>
+    </section>
+
+    <section id="anatomy">
+        <h2>Anatomy & Physiology</h2>
+        <p>🧠 Anatomy and physiology chapters...</p>
+        <a href="pdfs/anatomy_notes.pdf" download>Download Anatomy Notes (PDF)</a>
+    </section>
+
+    <section id="cprogramming">
+        <h2>C Programming</h2>
+        <p>💻 C programming concepts and exercises...</p>
+        <a href="pdfs/c_programming_notes.pdf" download>Download C Programming Notes (PDF)</a>
+    </section>
+    <section id="eipr">
+        <h2>E&IPR</h2>
+        <p>📖 E&IPR materials and notes...</p>
+        <a href="pdfs/eipr_notes.pdf" download>Download E&IPR Notes (PDF)</a>
+    </section>
+    <section id="foundation of computing">
+        <h2>Foundation of Computing</h2>
+        <p>🖥️ Foundation of computing materials...</p>
+        <a href="pdfs/foundation_notes.pdf" download>Download Foundation Notes (PDF)</a>
+    </section>
+    <br><br>
+    <p>Please support me by following me on linkedin and Github</p>
+    <a href =https://www.linkedin.com/in/adhithyan-saji-1a179932a/>LinkedIn</a>
+    <br>
+    <a href =https://github.com/adhithyan1306>Github</a>
+    <br><br>
+    <p>For any queries, please contact me at:</p>
+    <p>
+        <strong>adhithyan1306@gmail.com</strong>
+    </p>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        window.onload = function() {
+            let userName = localStorage.getItem("userName");
+            if (userName) {
+                document.getElementById("welcomeMessage").innerText = "Welcome, " + userName + "!";
+            }
+        }
+
+        function logout() {
+            let confirmLogout = confirm("Do you really want to logout?");
+            if (confirmLogout) {
+                localStorage.removeItem("userName");
+                window.location.href = "index.html";
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
